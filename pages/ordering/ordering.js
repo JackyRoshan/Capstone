@@ -11,7 +11,7 @@ Page({
   data: {
     title: 'ordering',
     restaurant: {
-      img: 'https://raw.githubusercontent.com/xnm1314/images_for_miniprogram/main/Hamburger.webp',
+      img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Hamburger.webp',
       name: 'Hamburger',
       id: 'remaid',
       tel: '123412341234',
@@ -44,14 +44,14 @@ Page({
         title: 'Snacks',
         id: 'list1',
         list: [{
-          img: 'https://github.com/xnm1314/images_for_miniprogram/blob/main/Colonel%20chicken%20nuggets.jpg?raw=true',
+          img: 'https://github.com/xinleif666/Capstone/blob/master/images/Colonel%20chicken%20nuggets.jpg?raw=true',
           name: 'Colonel chicken nuggets',
           count: '1305',
           good: '208',
           price: '5',
           id: 'list1_1'
         }, {
-          img: 'https://github.com/xnm1314/images_for_miniprogram/blob/main/Colonel%20chicken%20nuggets.jpg?raw=true',
+          img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Big%20chicken%20cutlet.webp',
           name: 'Big chicken cutlet',
           count: '1234',
           good: '324',
@@ -62,14 +62,14 @@ Page({
         title: 'Burger',
         id: 'list2',
         list: [{
-          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Deep%20sea%20cod%20burger.webp',
           name: 'Deep sea cod burger',
           count: '798',
           good: '132',
           price: '7',
           id: 'list2_1'
         }, {
-          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Crisp%20beef%20burger.webp',
           name: 'Crisp beef burger',
           count: '690',
           good: '156',
@@ -80,38 +80,44 @@ Page({
         title: 'Package',
         id: 'list3',
         list: [{
-          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Dragon%20Twister%20%2B%20Fries%20%2B%20Cola.webp',
           name: 'Dragon Twister + Fries + Cola',
           count: '543',
           good: '109',
-          price: '18'
+          price: '18',
+          id: 'list3_1'
         }, {
-          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',name: 'Seven shrimp burger + Fries + Cola',
+          img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Seven%20shrimp%20burger%20%2B%20Fries%20%2B%20Cola.webp',
+          name: 'Seven shrimp burger + Fries + Cola',
           count: '409',
           good: '88',
-          price: '14'
+          price: '14',
+          id: 'list3_2'
         }]
       }, {
         title: 'Drinks',
         id: 'list4',
         list: [{
-          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Fanta.webp',
           name: 'Fanta',
           count: '201',
           good: '23',
-          price: '3'
+          price: '3',
+          id: 'list4_1'
         }, {
-          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',name: 'Milk',
+          img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Milk.webp',
+          name: 'Milk',
           count: '102',
           good: '10',
-          price: '4'
+          price: '4',
+          id: 'list4_2'
         }]
       }],
       coupon: {
         id: 'code123123',
         delmoney: 10,
         condition: 100,
-        time: '2017-12-12'
+        time: '2022-12-12'
       }
     },
     // 当前的tab
@@ -175,7 +181,7 @@ Page({
   goCheckOrder: function goCheckOrder() {
     if (this.data.chooseGoods.allCount <= 0) {
       return wx.showToast({
-        title: '您还没有点餐',
+        title: 'You have not order your food yet',
         icon: 'success',
         mask: true
       });
@@ -277,7 +283,7 @@ Page({
    */
   getCoupon: function getCoupon(e) {
     wx.showToast({
-      title: '领取优惠券',
+      title: 'Receive a coupon',
       icon: 'success',
       duration: 2000,
       mask: true
@@ -371,10 +377,10 @@ Page({
     var goodsId = e.currentTarget.dataset.goodsid;
     if (!goodsId) {
       return wx.showModal({
-        title: '抱歉',
-        content: '您选的菜品暂时无法提供',
+        title: 'Sorry',
+        content: 'The dish you selected is unavailable for the time being',
         showCancel: false,
-        confirmText: '我知道了'
+        confirmText: 'Got it'
       });
     }
     var chooseGoods = this.data.chooseGoods;
