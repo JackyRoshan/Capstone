@@ -23,23 +23,20 @@ Page({
       navIcon: 'iconfont icon-erweima'
     }],
     hotShop: [{
-      shopImg: 'image',
-      shopName: '铁板饭'
+      shopImg: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Hamburger.webp',
+      shopName: 'Hamburger'
     }, {
       shopImg: 'image',
       shopName: '牛肉饭'
     }, {
       shopImg: 'image',
-      shopName: '汉堡'
+      shopName: '鲜尚渔'
     }, {
       shopImg: 'image',
-      shopName: '番茄鱼'
+      shopName: '嗨族拌面'
     }, {
       shopImg: 'image',
-      shopName: '兰州拉面'
-    }, {
-      shopImg: 'image',
-      shopName: '猪肚鸡'
+      shopName: '镇江鸭血粉丝'
     }],
     
     imgUrls: []
