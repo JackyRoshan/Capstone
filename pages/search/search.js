@@ -11,10 +11,10 @@ Page({
   data: {
     title: 'search',
     nearShop: [{
-      img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      name: '青花椒砂锅鱼',
-      price: '30',
-      kind: 'Chinese Food',
+      img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Hamburger.webp',
+      name: 'Hamburger',
+      price: '50',
+      kind: 'Western Food',
       distance: '8.6km',
       status: 'No waiting',
       grade: 'five-star'
