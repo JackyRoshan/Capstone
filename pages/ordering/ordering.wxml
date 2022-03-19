@@ -1,0 +1,148 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="ordering">
+  <!--餐馆顶部-->
+  <view class="o-top">
+    <image class="o-top-img" src="{{ restaurant.img }}"></image>
+    <view class="o-top-name">
+      {{ restaurant.name }}
+      <text style="width: 156rpx; height: 32rpx; display: block; box-sizing: border-box">{{ restaurant.status }}</text>
+    </view>
+  </view>
+  <!--中间导航-->
+  <view class="o-center">
+    <view bindtap="choose" data-tab="0" class="o-c-call {{ currentmenu == 0 ? 'active' : ''}}">Order</view>
+    <view bindtap="choose" data-tab="1" class="o-c-shop {{ currentmenu == 1 ? 'active' : ''}}">Info</view>
+  </view>
+  <!--导航内容0-->
+  <view  wx:if="{{ currentmenu == 0 }}">
+    <view class="menu1">
+      <!--左侧导航选项-->
+      <view class="menu0-left">
+        <scroll-view scroll-y="true" style="height: {{ scrollHeight }}rpx">
+          <view bindtap="leftChoose" data-menulistid="{{ item.id }}" class="{{ index == 0 ? 'iconfont icon-huo' : '' }} menu0-l-item {{ currentleftmenu == index ? 'active' : '' }}" data-menu="{{ index }}" wx:for="{{ restaurant.menuList }}" wx:key="unique">
+            {{ item.title }}
+          </view>
+        </scroll-view>
+      </view>
+      <!--商品选项-->
+      <view class="menu0-right">
+        <!--优惠卷-->
+        <view wx:if="{{ restaurant.coupon.id }}" class="shop-coupon posr">
+          <view class="circle-wrap posa">
+            <view class="circle" wx:for="0123456789"></view>
+          </view>
+          <view class="coupon">
+            <view class="coupon-left">
+              <text>{{ restaurant.coupon.delmoney }}￥</text>
+              <text>{{ restaurant.coupon.condition }}￥ to use</text>
+            </view>
+            <view class="coupon-right">
+              <view>{{ restaurant.name }}</view>
+              <view>{{ restaurant.coupon.time }}</view>
+            </view>
+            <view bindtap="getCoupon" class="get-coupon" data-couponid="{{ restaurant.coupon.id }}">Receive</view>
+          </view>
+        </view>
+        <!--菜单内容-->
+        <scroll-view scroll-y="true" scroll-with-animation="true"  scroll-into-view="{{ currentmenuid }}" style="height: {{ scrollHeight - needDistance }}rpx">
+          <block wx:for="{{ restaurant.menuList }}" wx:for-item="menu0List">
+            <!--商品分类标题-->
+            <view class="menu0-r-title" id="{{ menu0List.id }}">{{ menu0List.title }}</view>
+            <!--循环商品信息-->
+            <view class="menu0-r-goods" data-menus="{{ index }}" wx:for="{{ menu0List.list }}" wx:key="unique">
+              <image src="{{ item.img }}"></image>
+              <view class="menu0-r-g">
+                <view>{{ item.name }}</view>
+                <view>Sold {{ item.count }} Like {{ item.good }}</view>
+                <view class="menu0-r-price">
+                  ￥ {{ item.price }} 
+                </view>
+              </view>
+              <!--购买商品按钮-->
+              <view class="order-btn">
+                <view style="visibility: {{ chooseGoods.goods[item.id] > 0 ? 'visible' : 'hidden' }}" class="del-btn" catchtap="delorder" data-goodsid="{{ item.id }}">-</view>
+                <view style="visibility: {{ chooseGoods.goods[item.id] > 0 ? 'visible' : 'hidden' }}" class="order-number">{{ chooseGoods.goods[item.id] }}</view>
+                <view class="add-btn" catchtap="addorder" data-goodsid="{{ item.id }}">+</view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <!--购物车-->
+    <view class="shop-car-wrap {{ chooseGoods.allCount > 0 ? 'show' : '' }}">
+      <view wx:if="{{ showShopCarContent && chooseGoods.money > 0 }}" class="shop-car-content">
+        <view class="shop-car-content-title"><text style="color: #000;">Shopping Cart</text></view>
+        <!--已选商品信息-->
+        <scroll-view scroll-y="true" style="height: 470rpx">
+          <block wx:for="{{ restaurant.menuList }}" wx:for-item="menu0List">
+            <!--循环商品信息-->
+            <view wx:if="{{ chooseGoods.goods[item.id] > 0 }}" class="menu0-r-goods" data-menus="{{ index }}" wx:for="{{ menu0List.list }}" wx:key="unique">
+              <image src="{{ item.img }}"></image>
+              <view class="menu0-r-g">
+                <view>{{ item.name }}</view>
+                <!--<view>月售 {{ item.count }} 好评 {{ item.good }}</view>-->
+                <view class="menu0-r-price">
+                  ￥ {{ item.price }} 
+                </view>
+              </view>
+              <!--购买商品按钮-->
+              <view class="order-btn">
+                <view style="visibility: {{ chooseGoods.goods[item.id] > 0 ? 'visible' : 'hidden' }}" class="del-btn" catchtap="delorder" data-goodsid="{{ item.id }}">-</view>
+                <view style="visibility: {{ chooseGoods.goods[item.id] > 0 ? 'visible' : 'hidden' }}" class="order-number">{{ chooseGoods.goods[item.id] }}</view>
+                <view class="add-btn" catchtap="addorder" data-goodsid="{{ item.id }}">+</view>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      <view class="shop-car">
+        <text bindtap="showContent" class="iconfont icon-gouwuche2"><text wx:if="{{ chooseGoods.allCount > 0 }}" class="shop-car-count">{{ chooseGoods.allCount }}</text></text>
+        <text bindtap="showContent" class="shop-car-money">￥{{ chooseGoods.money }}</text>
+        <text bindtap="goCheckOrder" class="shop-car-btn">Confirm</text>
+      </view>
+    </view>
+    <!--<view class="menu0-bottom"></view>-->
+  </view>
+  <!--导航内容1-->
+  <view class="menu3" wx:if="{{ currentmenu == 1 }}">
+    <!--顶部地址和拨打电话-->
+    <view class="menu2-top">
+      <view class="menu2-top-left iconfont icon-icglobaltitlebar48iconfontmap">{{ restaurant.address }}</view>
+      <view class="iconfont icon-dianhua" bindtap="callPhone"></view>
+    </view>
+  <scroll-view scroll-y="true" style="height: {{ scrollHeight2 }}rpx;" class="menu2-user-comment">
+    <!--评分-->
+    <view class="menu2-grade">
+      <text class="menu2-grade-star iconfont icon-wuxing {{ restaurant.grade }}"></text>
+      <text class="posr">
+        <text>{{ restaurant.gradeNumber }}</text>
+        <text>Overall Rate</text>
+      </text>
+    </view>
+    <!--总体评论-->
+    <view class="menu2-comment">
+      <view class="menu2-comment-item" wx:for="{{ restaurant.comment}}" wx:key="unique">
+        {{ item.content }}({{ item.number }})
+      </view>
+    </view>
+    <!--用户评论-->
+
+      <view class="user-detail-comment" wx:for="{{ comment }}" wx:key="unique">
+        <view class="m-u-c-top">
+          <image src="{{ item.img }}"></image>
+          <view>{{ item.username }}</view>
+          <view class="iconfont icon-wuxing {{ item.grade }}"></view>
+          <view>{{ item.time }}</view>
+        </view>
+        <view class="menu2-comment">
+          <view class="menu2-comment-item" wx:for="{{ item.userComment}}" wx:key="unique" wx:for-item="detailitem">
+            {{ detailitem }}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!--遮罩层-->
+<view bindtap="showContent" wx:if="{{ chooseGoods.money > 0 }}" class="mask {{ showMask ? 'active' : '' }}"></view>

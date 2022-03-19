@@ -1,0 +1,19 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="grade">
+  <view class="give-star">
+    Rating：
+    <text bindtap="chooseStar" data-star="{{ index }}" wx:for="12345" class="iconfont icon-star {{ currentStar >= index ? 'active' : '' }}"></text>
+  </view>
+  <textarea class="text-input" placeholder="{{ text_ph }}" value=""> </textarea>
+  <view class="up-photo">
+    <view class="photos-wrap" wx:for="{{ upPhotoList }}">
+      <image data-imgsrc="{{ item }}" bindtap="showImage" class="photos"  src="{{ item }}"></image>
+      <view bindtap="delphoto" data-delsrc="{{ item }}" class="del-photo">Delete the image</view>
+    </view>
+  </view>
+  <view bindtap="upPhoto" class="up-photo-icon iconfont icon-touxiangmorenicon">Add image to comment</view>
+  <view class="in-money"><view>　Consumption per capita　￥</view><input bindblur="setMoney" type="number" placeholder='Total price' /></view>
+  <checkbox class="no-name" bindtap="changbox" checked="{{ checkStatus }}">Submit anonymously</checkbox>
+  <view class="grade-text">Coupon for comments!</view>
+  <view bindtap="gradeBtn" class="grade-btn">Submit</view>
+</view>

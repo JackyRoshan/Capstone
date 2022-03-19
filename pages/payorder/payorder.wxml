@@ -1,0 +1,33 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="payorder">
+  <view class="restaurant">
+    {{ order.restaurant }}
+  </view>
+  <view class="ocunt">
+    <text>have ordered {{ order.count }} dishes</text>
+    <text>order number: {{ order.number }}</text>
+  </view>
+  <view class="orderList">
+    <view class="time">
+      order time: {{ order.time }}
+    </view>
+    <view class="orderList-item">
+      <view class="orderList-item-top">
+        <text>cuisine</text>
+        <text>number</text>
+        <text>payment</text>
+      </view>
+      <view class="orderList-item-one" wx:for="{{ order.goods }}">
+        <text>{{ item.name }}</text>
+        <text>{{ item.count }}</text>
+        <text>{{ item.money }}</text>
+      </view>
+    </view>
+    <view class="bottom">
+      <text>total price</text>
+      <text>{{ order.allMoney }}</text>
+    </view>
+  </view>
+  <view class="tip">The actual payment is according with the order time</view>
+  <view bindtap="payMoney" class="start-pay">Go to Pay</view>
+</view>
