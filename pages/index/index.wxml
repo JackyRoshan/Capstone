@@ -18,7 +18,7 @@
   <view class="hot-shop">
     <view class="slide">Popular</view>
     <view class="hot-shop-wrap">
-      <navigator url="../detail/detail?kind={{ index }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
+      <navigator url="../ordering/ordering?shopId={{ index }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
         <image class="hot-shop-img" src="{{ item.shopImg }}"></image>
         {{ item.shopName }}
       </navigator>
