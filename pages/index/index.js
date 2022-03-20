@@ -29,7 +29,7 @@ Page({
       shopImg: 'image',
       shopName: '牛肉饭'
     }, {
-      shopImg: 'image',
+      shopImg: '/images/fishSoup.webp',
       shopName: '鲜尚渔'
     }, {
       shopImg: 'image',
