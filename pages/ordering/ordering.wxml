@@ -2,12 +2,27 @@
 <view class="ordering">
   <!--餐馆顶部-->
   <view class="o-top">
-    <image class="o-top-img" src="{{ restaurant.img }}"></image>
+
+  <!-- 循环对比商家的id -->
+  <!-- ------------------------- -->
+    <view wx:for="{{restaurant}}">
+      <view wx:if="{{item.id==query.shopId}}">
+        <image class="o-top-img" src="{{ item.img }}"></image>
+      </view>
+    </view>
+
+
+  <!-- --------------------------- -->
+    <!-- <image class="o-top-img" src="{{ restaurant.img }}"></image> -->
     <view class="o-top-name">
       {{ restaurant.name }}
       <text style="width: 156rpx; height: 32rpx; display: block; box-sizing: border-box">{{ restaurant.status }}</text>
     </view>
+
   </view>
+  <!-- 顶部结束 -->
+
+
   <!--中间导航-->
   <view class="o-center">
     <view bindtap="choose" data-tab="0" class="o-c-call {{ currentmenu == 0 ? 'active' : ''}}">Order</view>
