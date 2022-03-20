@@ -10,13 +10,10 @@ Page({
    */
   data: {
     title: 'ordering',
-    query:{},
-    restaurant: [
-      // 汉堡店
-      {
+    restaurant: {
       img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Hamburger.webp',
       name: 'Hamburger',
-      id: '1',
+      id: 'remaid',
       tel: '123412341234',
       status: 'working',
       grade: 'four-star',
@@ -115,6 +112,8 @@ Page({
           price: '4',
           id: 'list4_2'
         }]
+
+        
       }],
       coupon: {
         id: 'code123123',
@@ -123,22 +122,20 @@ Page({
         time: '2022-12-12'
       }
     },
-
-    // 镇江鸭血粉
-    {
-      img: '/images/yaxuefensi.webp',
-      name: 'Hamburger',
-      id: '5',
-      tel: '110-110-110',
+    restaurant1: {
+      img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Hamburger.webp',
+      name: 'Beef Bowl',
+      id: 'remaid',
+      tel: '12341234',
       status: 'working',
-      grade: 'five-star',
-      gradeNumber: '5.0',
+      grade: 'three-star',
+      gradeNumber: '3.5',
       comment: [{
         content: '服务态度好',
-        number: '932'
+        number: '109'
       }, {
         content: '食材新鲜',
-        number: '932'
+        number: '345'
       }, {
         content: '味道赞',
         number: '932'
@@ -156,7 +153,7 @@ Page({
         number: '9132'
       }],
       menuList: [{
-        title: '招牌鸭血粉',
+        title: '11111',
         id: 'list1',
         list: [{
           img: 'https://github.com/xinleif666/Capstone/blob/master/images/Colonel%20chicken%20nuggets.jpg?raw=true',
@@ -174,7 +171,7 @@ Page({
           id: 'list1_2'
         }]
       }, {
-        title: '鸭血粉加鸭胗',
+        title: 'Burger',
         id: 'list2',
         list: [{
           img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Deep%20sea%20cod%20burger.webp',
@@ -192,7 +189,7 @@ Page({
           id: 'list2_2'
         }]
       }, {
-        title: '酸菜肥牛粉',
+        title: 'Package',
         id: 'list3',
         list: [{
           img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Dragon%20Twister%20%2B%20Fries%20%2B%20Cola.webp',
@@ -210,7 +207,7 @@ Page({
           id: 'list3_2'
         }]
       }, {
-        title: '大排粉',
+        title: 'Drinks',
         id: 'list4',
         list: [{
           img: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Fanta.webp',
@@ -227,6 +224,8 @@ Page({
           price: '4',
           id: 'list4_2'
         }]
+
+        
       }],
       coupon: {
         id: 'code123123',
@@ -234,12 +233,8 @@ Page({
         condition: 100,
         time: '2022-12-12'
       }
-    }
-
-
-
-  
-  ],
+    },
+    
     // 当前的tab
     currentmenu: 0,
     // 当前的left栏
@@ -559,15 +554,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function onLoad(options) {
+  onLoad: function onLoad() {
     // TODO: onLoad
     // 改变标题栏文字
     this.setNavigatorText();
-    //拿取从index页传过来的id值，存到query中
-    console.log(options)
-    this.setData({
-      query:options
-    })
   },
 
 
