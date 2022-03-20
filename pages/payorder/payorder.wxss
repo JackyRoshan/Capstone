@@ -4,10 +4,10 @@ page {
   box-sizing: border-box;
 }
 .payorder .restaurant {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #333;
 }
-.payorder .ocunt {
+.payorder .count {
   line-height: 75rpx;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@ page {
   border-radius: 50%;
   top: 60rpx;
 }
-.payorder .orderList .time::before {
+.payorder .orderList .time::before { 
   left: -37rpx;
 }
 .payorder .orderList .time::after {
