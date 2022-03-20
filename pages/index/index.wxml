@@ -16,6 +16,7 @@
   </view>
   <!--hot-shop-->
   <view class="hot-shop">
+   <!-- 商家选择区域 -->
     <view class="slide">Popular</view>
     <view class="hot-shop-wrap">
       <navigator url="../ordering/ordering?shopId={{ index }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
