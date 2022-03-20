@@ -35,7 +35,7 @@ Page({
       shopImg: 'image',
       shopName: '嗨族拌面'
     }, {
-      shopImg: 'image',
+      shopImg: '/images/yaxuefensi.webp',
       shopName: '镇江鸭血粉丝'
     }],
     
