@@ -8,19 +8,17 @@
     <view wx:for="{{restaurant}}">
       <view wx:if="{{item.id==query.shopId}}">
         <image class="o-top-img" src="{{ item.img }}"></image>
+
+        <view class="o-top-name">
+          {{item.name }}
+          <text style="width: 156rpx; height: 32rpx; display: block; box-sizing: border-box">{{ item.status }}</text>
+        </view>
+
       </view>
     </view>
 
+  </view>   <!-- 顶部结束 -->
 
-  <!-- --------------------------- -->
-    <!-- <image class="o-top-img" src="{{ restaurant.img }}"></image> -->
-    <view class="o-top-name">
-      {{ restaurant.name }}
-      <text style="width: 156rpx; height: 32rpx; display: block; box-sizing: border-box">{{ restaurant.status }}</text>
-    </view>
-
-  </view>
-  <!-- 顶部结束 -->
 
 
   <!--中间导航-->
