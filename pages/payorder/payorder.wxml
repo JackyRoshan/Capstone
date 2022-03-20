@@ -3,10 +3,8 @@
   <view class="restaurant">
     {{ order.restaurant }}
   </view>
-  <view class="ocunt">
-    <text>have ordered {{ order.count }} dishes</text>
-    <text>order number: {{ order.number }}</text>
-  </view>
+
+
   <view class="orderList">
     <view class="time">
       order time: {{ order.time }}
@@ -26,6 +24,11 @@
     <view class="bottom">
       <text>total price</text>
       <text>{{ order.allMoney }}</text>
+    </view>
+
+    <view class="bottom">
+      <text>order number:</text> 
+      <text>{{ order.number }}</text>
     </view>
   </view>
   <view class="tip">The actual payment is according with the order time</view>
