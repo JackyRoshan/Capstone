@@ -19,10 +19,24 @@
    <!-- 商家选择区域 -->
     <view class="slide">Popular</view>
     <view class="hot-shop-wrap">
-      <navigator url="/pages/ordering/ordering?shopId={{ index }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
+
+    <!-- ------------------------ -->
+
+    <!-- 把原来的商家导航改了一下，并在index.js里加上了商家的id -->
+
+      <!-- <navigator url="/pages/ordering/ordering?shopId={{ index }}" hover-class="none" class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
         <image class="hot-shop-img" src="{{ item.shopImg }}"></image>
         {{ item.shopName }}
-      </navigator>
+      </navigator> -->
+
+      <view wx:for="{{ hotShop }}" wx:key="id" class="hot-shop-content">
+        <navigator url="/pages/ordering/ordering?shopId={{ item.id }}">
+          <image class="hot-shop-img" src="{{ item.shopImg }}"></image>
+          <text>{{ item.shopName }}</text>
+        </navigator>
+      </view>
+
+    <!-- ------------------------- -->
     </view>
   </view>
 </view>
