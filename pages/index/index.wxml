@@ -32,7 +32,7 @@
       <view wx:for="{{ hotShop }}" wx:key="id" class="hot-shop-content">
         <navigator url="/pages/ordering/ordering?shopId={{ item.id }}">
           <image class="hot-shop-img" src="{{ item.shopImg }}"></image>
-          <text>{{ item.shopName }}</text>
+          <text class="hot-shop-text">{{ item.shopName }}</text>
         </navigator>
       </view>
 
