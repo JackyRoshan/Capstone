@@ -84,6 +84,13 @@
   margin-top: -1rpx;
 }
 .hot-shop-wrap .hot-shop-content .hot-shop-img {
-  width: 172rpx;
-  height: 129rpx;
+  width: 100%;
+  height: 99%;
+  padding:0;
+  margin:0;
+}
+
+.hot-shop-wrap .hot-shop-content .hot-shop-text{
+  width:100%;
+  height:1%;
 }
