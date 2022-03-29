@@ -23,23 +23,26 @@ Page({
       navIcon: 'iconfont icon-erweima'
     }],
     hotShop: [{
-      shopImg: 'https://raw.githubusercontent.com/xinleif666/Capstone/master/images/Hamburger.webp',
+      shopImg: '../../images/Hamburger.webp',
       shopName: 'Hamburger'
     }, {
-      shopImg: 'image',
-      shopName: '牛肉饭'
+      shopImg: '../../images/F+.webp',
+      shopName: 'F+ Beef Rice'
     }, {
-      shopImg: '/images/fishSoup.webp',
-      shopName: '鲜尚渔'
+      shopImg: '../../images/XianShangYu.webp',
+      shopName: 'Xian-Shang-Yu'
     }, {
-      shopImg: 'image',
-      shopName: '嗨族拌面'
+      shopImg: '../../images/ClanNoodle.jpg',
+      shopName: 'Hi Clan Noodles'
     }, {
-      shopImg: '/images/yaxuefensi.webp',
-      shopName: '镇江鸭血粉丝'
+      shopImg: '../../images/Rice Noodle.webp',
+      shopName: 'Rice Noodle'
+    }, {
+      shopImg: '../../images/Pork Chicken.webp',
+      shopName: 'Pork Chicken'
     }],
     
-    imgUrls: []
+    imgUrls: ['../../images/Cafeteria_1.webp', '../../images/Cafeteria_2.webp', '../../images/Cafeteria_3.jpg']
   },
   /**
    * 用户选择位置
