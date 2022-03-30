@@ -1,5 +1,7 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
 <view class="payorder">
+
+  <view class="reminder">kind reminder:moderate ordering, avoid wasting</view>
   <view class="restaurant">
     {{ order.restaurant }}
   </view>
@@ -32,5 +34,21 @@
     </view>
   </view>
   <view class="tip">The actual payment is according with the order time</view>
+
+  <!-- 选择配送方式 -->
+  <view class="delivery">
+
+    <view class="delivery1">
+      <view><text class="school">school</text></view>
+      <view><text class="wku">Wenzhou-Kean University</text></view>
+
+      <view class="info"><text class="name">XXX</text> <text class="phone">13897045361</text></view>
+    </view>
+
+    <view class="delivery2">
+      <text class="deliveryMethod">Immediate delivery</text>   <text class="software">zhifubao</text>
+    </view>
+  </view>
+
   <view bindtap="payMoney" class="start-pay">Go to Pay</view>
 </view>
