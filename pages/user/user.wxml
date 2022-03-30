@@ -1,4 +1,4 @@
-<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+
 <view class="user">
   <!--user-info-->
   <view class="user-info">
@@ -14,6 +14,6 @@
   </view>
   <!--user-list-->
   <view class="user-list">
-    <navigator url="../useroperation/useroperation?operation={{ item.id }}" hover-class="none" class="triangle {{ item.icon }}" wx:for="{{ userList }}" wx:key="unique">  {{ item.title }}</navigator>
+    <navigator url="../useroperation/useroperation?operation={{ item.id }}" hover-class="none" class="triangle {{ item.icon }}" wx:for="{{ userList }}" wx:key="unique" style="position: relative; left: 0rpx; top: 5rpx">  {{ item.title }}</navigator>
   </view>
 </view>

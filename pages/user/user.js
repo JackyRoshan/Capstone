@@ -1,12 +1,12 @@
 'use strict';
 
-// 获取全局应用程序实例对象
+// Get global application instance object
 var app = getApp();
 
-// 创建页面实例对象
+// Create page instance object
 Page({
   /**
-   * 页面的初始数据
+   * Initial data of the page
    */
   data: {
     title: 'user',
@@ -46,7 +46,7 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * Life cycle function -- listening for page loading
    */
   onLoad: function onLoad() {
     this.setData({
@@ -57,7 +57,7 @@ Page({
 
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * Life cycle function -- monitor the completion of the first rendering of the page
    */
   onReady: function onReady() {
     // TODO: onReady
@@ -65,7 +65,7 @@ Page({
 
 
   /**
-   * 生命周期函数--监听页面显示
+   * Life cycle function -- monitor page display
    */
   onShow: function onShow() {
     // TODO: onShow
@@ -73,7 +73,7 @@ Page({
 
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * Life cycle function -- listening for page hiding
    */
   onHide: function onHide() {
     // TODO: onHide
@@ -81,7 +81,7 @@ Page({
 
 
   /**
-   * 生命周期函数--监听页面卸载
+   * Life cycle function -- monitor page unloading
    */
   onUnload: function onUnload() {
     // TODO: onUnload
@@ -89,7 +89,7 @@ Page({
 
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * Page related event handling function -- listening to user drop-down actions
    */
   onPullDownRefresh: function onPullDownRefresh() {
     // TODO: onPullDownRefresh
