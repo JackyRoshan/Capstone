@@ -1,6 +1,6 @@
-<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+
 <view class="user-opertaion">
-  <!--我的排单-->
+  <!--My list-->
   <view wx:if="{{ operation == 'number' }}" class="number">
     <view class="number-top">
       <image src="{{ numberList.img }}"></image>
@@ -14,7 +14,7 @@
       <text>请听到叫号立即到收银台</text>
     </view>
   </view>
-  <!--我的消息-->
+  <!--My message-->
   <view wx:if="{{ operation == 'message' }}" class="message">
     <view bindtap="chooseMessage" data-message="{{ index }}" class="message-wrap" wx:for="{{ message }}" wx:key="unique">
       <view class="m-w-top iconfont icon-552cc4077f2ed triangle {{ showMessage === index ? 'triangle-animation' : '' }}">
@@ -26,7 +26,7 @@
       </view>
     </view>
   </view>
-  <!--我的积分-->
+  <!--My integral-->
   <view wx:if="{{ operation == 'integral' }}" class="integral">
     <view class="integral-wrap" wx:for="{{ integral }}" wx:key="unique">
       <image src="{{ item.img }}"></image>
@@ -39,9 +39,9 @@
       <view class="integral-change" data-integralid="{{ item.integralid }}">Redeem now</view>
     </view>
   </view>
-  <!--我的优惠券-->
+  <!--My coupon-->
   <view wx:if="{{ operation == 'coupon' }}" class="coupon">
-    <!--顶部tab-->
+    <!--tab-->
     <view class="coupon-top">
         <view bindtap="chooseCouponTab" data-tabid="{{ index }}" class="coupon-top-item {{ currentCouponTab == index ? 'active' : '' }}" wx:for="{{ couponNumber }}">
           {{ item.title }}({{ item.count }})
@@ -58,7 +58,7 @@
               <view class="c-l-t-center">{{ item.useCondition }}</view>
               <view class="c-l-t-right iconfont icon-youhuiquan">{{ item.name }}</view>
             </view>
-            <!--圆圈-->
+            <!--circle-->
             <view class="circle">
               <view class="circle-item" wx:for="123456789qwertyuiopasdfghjklzxcvbnmqweqweq"></view>
             </view>
@@ -79,7 +79,7 @@
             <view class="c-l-t-center">{{ item.useCondition }}</view>
             <view class="c-l-t-right iconfont icon-youhuiquan">{{ item.name }}</view>
           </view>
-          <!--圆圈-->
+          <!--circle-->
           <view class="circle">
             <view class="circle-item" wx:for="123456789qwertyuiopasdfghjklzxcvbnmqweqweq"></view>
           </view>
@@ -100,7 +100,7 @@
             <view class="c-l-t-center">{{ item.useCondition }}</view>
             <view class="c-l-t-right iconfont icon-youhuiquan">{{ item.name }}</view>
           </view>
-          <!--圆圈-->
+          <!--circle-->
           <view class="circle">
             <view class="circle-item" wx:for="123456789qwertyuiopasdfghjklzxcvbnmqweqweq"></view>
           </view>
@@ -111,7 +111,7 @@
       </block>
     </view>
   </view>
-  <!--我的订单-->
+  <!--My order-->
   <view wx:if="{{ operation == 'order' }}" class="order">
     <view class="coupon-top">
       <view bindtap="chooseCouponTab" data-tabid="{{ index }}" class="coupon-top-item {{ currentCouponTab == index ? 'active' : '' }}" wx:for="{{ orderNumber }}">
@@ -186,7 +186,7 @@
       </view>
     </view>
   </view>
-  <!--商家入驻-->
+  <!--Merchant settlement-->
   <view wx:if="{{ operation == 'merchant' }}" class="merchant">
     <view class="img-wrap">
       <image src="../../images/1.png"></image>
