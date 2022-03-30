@@ -3,9 +3,22 @@ page {
   padding: 24rpx;
   box-sizing: border-box;
 }
+.payorder .reminder{
+  font-size:30rpx;
+  align-items: center;
+  justify-content: space-between;
+  background-color:lemonchiffon;
+  border-radius:24rpx;
+  color:chocolate;
+  padding:1em;
+
+}
+
+
 .payorder .restaurant {
   font-size: 26rpx;
   color: #333;
+  margin-top:1em;
 }
 .payorder .count {
   line-height: 75rpx;
@@ -108,3 +121,57 @@ page {
   border-radius: 10rpx;
   background-color: #f00;
 }
+
+.delivery{
+  background-color: rgb(219, 214, 214);
+  height:320rpx;
+  margin:50rpx;
+  border-radius: 24rpx;
+}
+
+.delivery .delivery1{
+  margin: 10rpx;
+  height:50%;
+  background-color: white;
+  border-radius: 24rpx;
+  padding:25rpx;
+
+}
+
+.delivery .delivery2{
+  margin:10rpx;
+  height:50%;
+  background-color: whitesmoke;
+  border-radius: 24rpx;
+  padding:25rpx;
+}
+
+.school{
+  background-color: pink;
+  color:red;
+  font-size:20rpx;
+  margin-right:100rpx;
+}
+
+.wku{
+  font-size:40rpx;
+}
+
+.info{
+  margin-top:20rpx;
+  margin-bottom:30rpx;
+}
+.name{
+  color:gray;
+  margin-right:60rpx;
+}
+.phone{
+  color:gray;
+}
+.deliveryMethod{
+  margin-right:70rpx;
+}
+.software{
+  color:red;
+}
+
