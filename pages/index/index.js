@@ -126,6 +126,7 @@ Page({
    */
   onPullDownRefresh: function onPullDownRefresh() {
     console.log(' ---------- onPullDownRefresh ----------');
+    wx.stopPullDownRefresh()
   }
 });
 //# sourceMappingURL=index.js.map
