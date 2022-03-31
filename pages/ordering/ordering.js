@@ -599,6 +599,7 @@ Page({
    */
   onPullDownRefresh: function onPullDownRefresh() {
     // TODO: onPullDownRefresh
+    wx.stopPullDownRefresh()
   }
 });
 //# sourceMappingURL=ordering.js.map
