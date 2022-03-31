@@ -93,6 +93,7 @@ Page({
    */
   onPullDownRefresh: function onPullDownRefresh() {
     // TODO: onPullDownRefresh
+    wx.stopPullDownRefresh()
   }
 });
 //# sourceMappingURL=user.js.map
