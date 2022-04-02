@@ -2,10 +2,10 @@
 <view class="ordering">
   <!--餐馆顶部-->
   <view class="o-top">
-    <image class="o-top-img" src="{{ restaurant1.img }}"></image>
+    <image class="o-top-img" src="{{ restaurant.img }}"></image>
     <view class="o-top-name">
-      {{ restaurant1.name }}
-      <text style="width: 156rpx; height: 32rpx; display: block; box-sizing: border-box">{{ restaurant1.status }}</text>
+      {{ restaurant.name }}
+      <text style="width: 156rpx; height: 32rpx; display: block; box-sizing: border-box">{{ restaurant.status }}</text>
     </view>
   </view>
   <!--中间导航-->
@@ -19,7 +19,7 @@
       <!--左侧导航选项-->
       <view class="menu0-left">
         <scroll-view scroll-y="true" style="height: {{ scrollHeight }}rpx">
-          <view bindtap="leftChoose" data-menulistid="{{ item.id }}" class="{{ index == 0 ? 'iconfont icon-huo' : '' }} menu0-l-item {{ currentleftmenu == index ? 'active' : '' }}" data-menu="{{ index }}" wx:for="{{ restaurant1.menuList }}" wx:key="unique">
+          <view bindtap="leftChoose" data-menulistid="{{ item.id }}" class="{{ index == 0 ? 'iconfont icon-huo' : '' }} menu0-l-item {{ currentleftmenu == index ? 'active' : '' }}" data-menu="{{ index }}" wx:for="{{ restaurant.menuList }}" wx:key="unique">
             {{ item.title }}
           </view>
         </scroll-view>
@@ -27,25 +27,25 @@
       <!--商品选项-->
       <view class="menu0-right">
         <!--优惠卷-->
-        <view wx:if="{{ restaurant1.coupon.id }}" class="shop-coupon posr">
+        <view wx:if="{{ restaurant.coupon.id }}" class="shop-coupon posr">
           <view class="circle-wrap posa">
             <view class="circle" wx:for="0123456789"></view>
           </view>
           <view class="coupon">
             <view class="coupon-left">
-              <text>{{ restaurant1.coupon.delmoney }}￥</text>
-              <text>{{ restaurant1.coupon.condition }}￥ to use</text>
+              <text>{{ restaurant.coupon.delmoney }}￥</text>
+              <text>{{ restaurant.coupon.condition }}￥ to use</text>
             </view>
             <view class="coupon-right">
-              <view>{{ restaurant1.name }}</view>
-              <view>{{ restaurant1.coupon.time }}</view>
+              <view>{{ restaurant.name }}</view>
+              <view>{{ restaurant.coupon.time }}</view>
             </view>
-            <view bindtap="getCoupon" class="get-coupon" data-couponid="{{ restaurant1.coupon.id }}">Receive</view>
+            <view bindtap="getCoupon" class="get-coupon" data-couponid="{{ restaurant.coupon.id }}">Receive</view>
           </view>
         </view>
         <!--菜单内容-->
         <scroll-view scroll-y="true" scroll-with-animation="true"  scroll-into-view="{{ currentmenuid }}" style="height: {{ scrollHeight - needDistance }}rpx">
-          <block wx:for="{{ restaurant1.menuList }}" wx:for-item="menu0List">
+          <block wx:for="{{ restaurant.menuList }}" wx:for-item="menu0List">
             <!--商品分类标题-->
             <view class="menu0-r-title" id="{{ menu0List.id }}">{{ menu0List.title }}</view>
             <!--循环商品信息-->
