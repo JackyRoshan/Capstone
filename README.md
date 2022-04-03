@@ -8,5 +8,10 @@ We’ve used Nightly Build, and it is convenient to develop and debug.
 3.	Upload the file as shown below
 ![Image text](https://github.com/JackyRoshan/Capstone/blob/master/images/README.png?raw=true)
 
+4. design the framework of the miniprogram, and create functional pages
+
 Part 2: What we expect you to complete the project
 1.	Connect to server and database
+2.  refine the UI, deal with the image adaption 
+3.  please assign each restaurant a proper menu with scrolling sidebar on the left
+4.  please signify user with data loading icon, as well as other useful tips
