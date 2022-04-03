@@ -112,7 +112,7 @@ page {
   line-height: 80rpx;
 }
 .start-pay {
-  position: fixed;
+  position:fixed;
   bottom: 0;
   width: 93%;
   line-height: 70rpx;
@@ -122,10 +122,11 @@ page {
   background-color: #f00;
 }
 
+/* user info-----------------------------------*/
 .delivery{
   background-color: rgb(219, 214, 214);
-  height:320rpx;
-  margin:50rpx;
+  height:500rpx;
+  margin:20rpx;
   border-radius: 24rpx;
 }
 
@@ -135,13 +136,12 @@ page {
   background-color: white;
   border-radius: 24rpx;
   padding:25rpx;
-
 }
 
 .delivery .delivery2{
   margin:10rpx;
   height:50%;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 24rpx;
   padding:25rpx;
 }
@@ -175,3 +175,30 @@ page {
   color:red;
 }
 
+/* --------------additional background------------- */
+.enlong{
+  margin-top:120rpx;
+  height:500rpx;
+  background-color: #efefef;
+}
+
+
+/* payment */
+.payframe{
+width:93%;
+line-height: 70rpx;
+background-color:#333366;
+border-radius:10rpx;
+
+}
+
+/* .start-pay {
+  position: fixed;
+  bottom: 0;
+  width: 93%;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #f00;
+} */

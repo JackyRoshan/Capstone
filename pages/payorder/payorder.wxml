@@ -50,5 +50,12 @@
     </view>
   </view>
 
-  <view bindtap="payMoney" class="start-pay">Go to Pay</view>
+  <!-- 加长背景 -->
+  <view class="enlong"></view>
+
+<!-- 前往支付 -->
+  <view class="pay-frame">
+    <view class="pay-bar"></view>
+    <view bindtap="payMoney" class="start-pay">Go to Pay</view>
+  </view>
 </view>

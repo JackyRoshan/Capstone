@@ -10,6 +10,11 @@ Page({
    */
   data: {
     title: 'payorder',
+    query:{},
+    menuList:[],
+
+
+
     order: {
       restaurant: 'Dining Hall NO.2',
       count: 5,
@@ -60,9 +65,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function onLoad() {
-    // TODO: onLoad
+  onLoad: function onLoad(option) {
+    this.setData({
+      query:option //将点菜页面传过来的数据，保存到data中的临时对象query中
+    })
   },
+
+// 获取菜单
+getMenuList(){
+  
+},
 
 
   /**
@@ -102,6 +114,7 @@ Page({
    */
   onPullDownRefresh: function onPullDownRefresh() {
     // TODO: onPullDownRefresh
+    wx.stopPullDownRefresh()
   }
 });
 //# sourceMappingURL=payorder.js.map
