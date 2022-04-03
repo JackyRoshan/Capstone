@@ -13,5 +13,7 @@ We’ve used Nightly Build, and it is convenient to develop and debug.
 Part 2: What we expect you to complete the project
 1.	Connect to server and database
 2.  refine the UI, deal with the image adaption 
-3.  please assign each restaurant a proper menu with scrolling sidebar on the left
-4.  please signify user with data loading icon, as well as other useful tips
+3.  please assign each restaurant a proper menu with scrolling sidebar on the left，when you do that, we will use the data of each restaurant, I stored these as array presented below (in app.js file)
+![image text](![图片](https://user-images.githubusercontent.com/86636180/161421110-db0e5f51-aa80-44b5-a5d8-692d7136e73d.png)
+
+5.  please signify user with data loading icon, as well as other useful tips
